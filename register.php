@@ -7,7 +7,6 @@ include ("actions/db.php");
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 </head>
 
-<!--        Content Wrapper        -->   
 
 <form action="registerf.php" method="post" enctype="multipart/form-data">
     <label for="fname">First Name:</label><br> 
