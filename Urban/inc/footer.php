@@ -1,0 +1,54 @@
+
+<footer class='page-footer indigo darken-1'>
+    <div class='container'>
+        <div class='row'>
+
+            <div class='col l6 s12'>
+                <h5 class='white-text'>Urban Chef</h5>
+                <p class='grey-text text-lighten-4'>Urban Chef is a platform that unites chefs and students. It gives you           the opportunity to really learn how to cook a traditional dish. You will be taught in a personal setting             and have a great experience.</p>
+            </div>
+
+            <div class='col l3 s12'>
+                <h5 class='white-text'>About</h5>
+                <ul>
+                    <li><a class='white-text' href='?page=about'>Who are we?</a></li>
+                    <li><a class='white-text' href='?page=social'>Social feed</a></li>
+                    <li><a class='white-text' href='?page=contact'>Contact us</a></li>
+                </ul>
+            </div>
+
+            <div class='col l3 s12'>
+                <h5 class='white-text'>Connect</h5>
+                <ul>
+                    <li><a class='white-text' href='http://www.facebook.com/urbanchef2016'>Facebook</a></li>
+                    <li><a class='white-text' href='http://www.instagram.com'>Instagram</a></li>
+                    <li><a class='white-text' href='http://www.pinterest.com'>Pinterest</a></li>
+                    <li><a class='white-text' href='http://www.twitter.com'>Twitter</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <div class='footer-copyright'>
+        <div class='container'>
+            Made by <a class='brown-text text-lighten-3' href='http://www.danielleklaasen.com'>Danielle</a>, <a                 class='brown-text text-lighten-3' href='https://www.facebook.com/kineks?fref=ts'>Bogdan</a> & <a class='brown-text           text-lighten-3' href='https://www.facebook.com/matthew.skea?fref=ts'>Matthew</a>
+        </div>
+    </div>
+
+</footer>   
+<!--  Scripts-->
+<script src='https://code.jquery.com/jquery-2.1.1.min.js'></script>
+<script src='js/materialize.js'></script>
+<script src='js/init.js'></script>
+
+<script>
+    $(document).ready(function () {
+        // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+        $('.modal-trigger').leanModal();
+//                $('.modal-trigger').openModal();
+    });
+
+</script>
+</body>
+</html>
