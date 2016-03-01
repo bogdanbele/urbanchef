@@ -1,6 +1,6 @@
 <?php
 include './inc/nav.php';
-
+ // jew
 $get = $_GET["origin_id"];
 $pointer = $db->query('SELECT * FROM recipes INNER JOIN origins ON recipes.origin_id = origins.origin_id ORDER BY origins.country');
 $pointer->bindValue(":origin_id", $get);
