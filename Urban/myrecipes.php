@@ -16,7 +16,7 @@ include ("actions/checked_logged_in.php");
                 . "recipes.recipe_id, recipes.title, recipes.description, recipes.cooktime, recipes.price, "
                 . "recipes.image, recipes.origin_id FROM usersrecipe "
                 . "INNER JOIN recipes ON usersrecipe.recipe_id = recipes.recipe_id "
-                . "WHERE usersrecipe.user_id = $user_id");
+                . "WHERE usersrecipe.user_id = $user_id ORDER BY recipes.recipe_id DESC");
 
 //        $stmt = $db->query("SELECT * FROM recipes ORDER BY recipe_id DESC");
 //        $stmt = $db->query("SELECT users.user_id, usersrecipe.user_id, usersrecipe.recipe_id, recipes.recipe_id, recipes.title, recipes.description, recipes.cooktime, recipes.price, recipes.image, recipes.origin_id FROM users"
