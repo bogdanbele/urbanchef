@@ -2,21 +2,22 @@
 include './inc/nav.php';
  // jew
 $get = $_GET["origin_id"];
-$pointer = $db->query('SELECT * FROM recipes INNER JOIN origins ON recipes.origin_id = origins.origin_id ORDER BY origins.country');
-$pointer->bindValue(":origin_id", $get);
+
+$pointer = $db->prepare('SELECT * FROM recipes WHERE origin_id=:origin_id');
+$pointer->bindValue(":origin_id", $_GET["origin_id"]);
 $pointer->execute();
 
-echo 'jew';
+
 while($recipes=$pointer->fetchObject()){
  ?>
 
- <div class='col s12 m4' >S
+ <div class='col s12 m4' >
             <a href='recipe.php?recipe_id=<?php echo $recipes->recipe_id; ?>'><img style="width: 200px;" class='responsive-img' src='img/recipe/<?php echo $recipes->image; ?>' alt="<?php echo $recipes->title; ?> imge" /></a>
            <a href='recipe.php?recipe_id=<?php echo $recipes->recipe_id; ?>' class='indigo-text text-darken-1'><b> <?php echo $recipes->title; ?></b></a>
             <br>  <?php echo $recipes->description; ?>
             <hr>
             Price: <?php echo $recipes->price; ?> DKK<br>
-            Origin: <a href='#' class='indigo-text text-darken-1'><?php echo $recipes->country; ?></a><br>
+      
             Rating: <span class='orange-text text-darken-1'><i class='tiny material-icons'>grade</i><i class='tiny material-icons'>grade</i><i class='tiny material-icons'>grade</i><i class='tiny material-icons'>grade</i></span>
         </div>
  

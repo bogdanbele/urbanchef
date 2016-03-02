@@ -1,29 +1,40 @@
 <?php
-include('actions/session.php');
+include './inc/nav.php';
+
+echo $user_id;
+
+$email = $_SESSION["email"];
+$stmt = $db->prepare('SELECT * FROM users WHERE user_id=:user_id'); 
+
+$stmt->bindValue(':user_id', $user_id);
+        $stmt->execute();
+echo $email;
 
 
-?>
-<!DOCTYPE html>
-<html>
-<head>
-    <?php
+$userdata = $stmt->fetchObject();
 
-?>
-<title>Your Home Page</title>
-<link href="style.css" rel="stylesheet" type="text/css">
-
-</head>
-<body>
-       
-<div id="profile">
-    
-<b id="welcome">Welcome: <i><?php echo $login_session; ?></i></b>
-<b id="logout"><a href="actions/logout.php">Log Out</a></b>
+ echo $_SESSION["email"]; ?>
 
 
-</div>
-    
-    <b id="welcome">zzzzz 
-<br>
-</body>
-</html>
+<?php echo $userdata->fname; ?>
+<?php echo $userdata->lname; ?>
+<?php echo $userdata->image; ?>
+<?php echo $userdata->description; ?>
+<?php echo $userdata->address; ?>
+
+
+
+
+
+
+
+
+
+<!--<?php echo $_SESSION["lname"]; ?>
+<?php echo $_SESSION["image"]; ?>
+<?php echo $_SESSION["description"]; ?>
+<?php echo $_SESSION["address"]; ?>-->
+
+<?php
+
+include './inc/footer.php';

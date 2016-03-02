@@ -2,7 +2,7 @@
 include './inc/nav.php';
 $pointer = $db->prepare('SELECT * FROM origins
 ORDER BY RAND()
-LIMIT 12');
+LIMIT 7');
 $pointer->execute();
 
 
