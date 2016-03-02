@@ -1,7 +1,7 @@
 <?php
 
-include ("../../inc/db.php");
-//include ("../../inc/checked_logged_in.php");
+include ("../db.php");
+include ("../checked_logged_in.php");
 
 $user_id = $_POST['user_id'];
 $title = $_POST['title'];
@@ -29,7 +29,7 @@ if (move_uploaded_file($_FILES['image']['tmp_name'], $uploadfile)) {
 } else {
     echo "Possible file upload attack!\n";
 }
-
+//added users recipes
 $stmt = $db->prepare("INSERT INTO "
         . "recipes (title, description, cooktime, price, image, origin_id) "
         . "VALUES "
@@ -43,15 +43,30 @@ $stmt->bindValue(":image", $_FILES['image']['name']);
 $stmt->bindValue(":origin_id", $origin_id);
 
 $stmt->execute();
+echo "The recipe has been added to the database.<br>";
 
+
+//insert users_id and recipe_id into usersrecipes
 echo "Title : $title <br>";
 
 $stmt = $db->prepare("SELECT * FROM recipes WHERE title='$title'");
 $stmt->execute();
 $recipe = $stmt->fetchObject();
 
+$recipe_id= $recipe->recipe_id;
 
-echo "$recipe->recipe_id";
+echo "User_ID : $user_id<br>";
+echo "Recipe ID : $recipe_id";
 
+$stmt = $db->prepare("INSERT INTO "
+        . "usersrecipe (user_id, recipe_id) "
+        . "VALUES "
+        . "(:user_id, :recipe_id)");
+
+$stmt->bindValue(":user_id", $user_id);
+$stmt->bindValue(":recipe_id", $recipe_id);
+
+$stmt->execute();
+echo "<br>The user_id & recipe_id have been added to the database.<br>";
 
 echo "Complete";
