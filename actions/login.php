@@ -25,7 +25,7 @@ $query = mysql_query("select * from users where password='$password' AND email='
 $rows = mysql_num_rows($query);
 if ($rows == 1) {
 $_SESSION['login_user']=$email; // Initializing Session
-header("location: ../urbanchef3/profile.php"); // Redirecting To Other Page
+header("location: ../urbanchef/profile.php"); // Redirecting To Other Page
 } else {
 $error = "Email or Password is invalid";
 }
