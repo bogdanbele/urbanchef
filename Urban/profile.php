@@ -12,7 +12,18 @@ $stmt->bindValue(':user_id', $user_id);
 
 $userdata = $stmt->fetchObject();
 
- echo $_SESSION["email"]; ?> <br> 
+ ?>
+<div class='container'>
+<br>
+             
+      
+    
+   
+    
+    
+    
+    <div class='row'>
+<?php echo $_SESSION["email"]; ?> <br> 
 
 
 
@@ -22,8 +33,8 @@ $userdata = $stmt->fetchObject();
 <?php echo $userdata->lname; ?> <br> 
 
 
+<img style="max-height: 300px; max-width: 300px;" class='responsive-img' src='profileimg/<?php echo $userdata->image; ?>' alt="<?php echo $userdata->fname; ?>" /><br> 
 
-<?php echo $userdata->image; ?> <br>  
 
 
 <?php echo $userdata->description; ?> <br> 
@@ -34,16 +45,7 @@ $userdata = $stmt->fetchObject();
 
 
 
-
-
-
-
-
-
-<!--<?php echo $_SESSION["lname"]; ?>
-<?php echo $_SESSION["image"]; ?>
-<?php echo $_SESSION["description"]; ?>
-<?php echo $_SESSION["address"]; ?>-->
+    </div></div>
 
 <?php
 
