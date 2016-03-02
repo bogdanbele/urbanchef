@@ -11,21 +11,21 @@
             <div class='col l3 s12'>
                 <h5 class='white-text'>About</h5>
                 <ul>
-                    <li><a class='white-text' href='?page=about'>Who are we?</a></li>
-                    <li><a class='white-text' href='?page=social'>Social feed</a></li>
-                    <li><a class='white-text' href='?page=contact'>Contact us</a></li>
+                    <li><a class='white-text' href='about.php'>Who are we?</a></li>
+                    <li><a class='white-text' href='social.php'>Social feed</a></li>
+                    <li><a class='white-text' href='contact.php'>Contact us</a></li>
                 </ul>
             </div>
 
-            <div class='col l3 s12'>
-                <h5 class='white-text'>Connect</h5>
-                <ul>
-                    <li><a class='white-text' href='http://www.facebook.com/urbanchef2016'>Facebook</a></li>
-                    <li><a class='white-text' href='http://www.instagram.com'>Instagram</a></li>
-                    <li><a class='white-text' href='http://www.pinterest.com'>Pinterest</a></li>
-                    <li><a class='white-text' href='http://www.twitter.com'>Twitter</a></li>
-                </ul>
-            </div>
+             <div class='col l3 s12'>
+          <h5 class='white-text'>Connect</h5>
+          <ul>
+            <li><a class='white-text' href='http://www.facebook.com/urbanchef2016'>Facebook</a></li>
+            <li><a class='white-text' href='http://www.instagram.com/urbanchef2016'>Instagram</a></li>
+            <li><a class='white-text' href='https://www.pinterest.com/daantje_1989/urban-chef/?fb_ref=300826587518084954%3Af435c6dafcdff62682b8'>Pinterest</a></li>
+            <li><a href='http://www.twitter.com/urbanchef2016' class='white-text'>Twitter</a></li>
+          </ul>
+        </div>
 
         </div>
     </div>
