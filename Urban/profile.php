@@ -1,7 +1,7 @@
 <?php
 include './inc/nav.php';
 
-echo $user_id;
+
 
 $email = $_SESSION["email"];
 $stmt = $db->prepare('SELECT * FROM users WHERE user_id=:user_id'); 
@@ -13,35 +13,34 @@ $stmt->bindValue(':user_id', $user_id);
 $userdata = $stmt->fetchObject();
 
  ?>
+<div class='parallax-container valign-wrapper'>
+    <div class='section no-pad-bot'>
+      <div class='container'>
+        <div class='row center'>
+          <h4 class='header col s12 white-text'>Hi, <?php echo $userdata->fname; ?> <?php echo $userdata->lname; ?> </h4>
+        </div>
+      </div>
+    </div>
+    <div class='parallax'><img src='background12.jpg' alt=''></div>
+  </div>
+
 <div class='container'>
 <br>
-             
-      
-    
    
-    
-    
-    
-    <div class='row'>
-<?php echo $_SESSION["email"]; ?> <br> 
+ <div class='row'>
+     <div class="col s12 m6">
+         
+         <p><b>E-mail:</b> <?php echo $_SESSION["email"]; ?></p>
+         <p><b>Address:</b> <?php echo $userdata->address; ?></p>
+         <p><b>Description:</b> <?php echo $userdata->description; ?></p>
+
+</div>
+   <div class="col s12 m6">  
+<img class='responsive-img' src='profileimg/<?php echo $userdata->image; ?>' alt="<?php echo $userdata->fname; ?>" /><br> 
+
+     </div>
 
 
-
-<?php echo $userdata->fname; ?> <br> 
-
-
-<?php echo $userdata->lname; ?> <br> 
-
-
-<img style="max-height: 300px; max-width: 300px;" class='responsive-img' src='profileimg/<?php echo $userdata->image; ?>' alt="<?php echo $userdata->fname; ?>" /><br> 
-
-
-
-<?php echo $userdata->description; ?> <br> 
-
-
-
-<?php echo $userdata->address; ?> <br> 
 
 
 

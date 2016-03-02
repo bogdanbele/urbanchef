@@ -7,7 +7,18 @@ include ("actions/checked_logged_in.php");
 //    -add review's
 //    -add checklogged include check logged in (works) 
 ?>
-<a class="waves-effect waves-light btn modal-trigger" href="#modal5">Add a Recipe</a>
+
+<div class='parallax-container valign-wrapper'>
+    <div class='section no-pad-bot'>
+      <div class='container'>
+        <div class='row center'>
+          <h4 class='header col s12 black-text'>Add a recipe</h4>
+        </div>
+      </div>
+    </div>
+    <div class='parallax'><img src='background11.jpg' alt=''></div>
+  </div>
+
 <div class="container">
     <div class="section">
         <!--<div class = 'row center'>-->
@@ -25,7 +36,7 @@ include ("actions/checked_logged_in.php");
 //                . "WHERE user_id=:user_id");
 //        $stmt->bindValue(':user_id', $user_id);
 //        $stmt->execute();
-        echo"User_id : $user_id";
+       
         while ($recipes = $stmt->fetchObject()) {
             ?>
             <section class="recipes">
@@ -101,7 +112,7 @@ include ("actions/checked_logged_in.php");
 <div class = 'container'>
     <div class = 'section'>
         <div class = 'row center'>
-            <a class = "waves-effect waves-light btn modal-trigger" href = "#modal5">Add a Recipe</a>
+            <a class = "waves-effect waves-light btn modal-trigger orange darken-1" href = "#modal5">Add a Recipe</a>
             <!--<a class = "waves-effect waves-light btn modal-trigger" href = "actions/recipe/addRecipe.php">Add Recipe</a> -->
             <!--********** -->
             <!--ADD RECIPE-->
