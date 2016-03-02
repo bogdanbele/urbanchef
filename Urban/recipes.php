@@ -39,7 +39,7 @@ while ($recipes = $stmt->fetchObject()) {
     else {}
     ?>
     <div class='col s12 m4 forceheight' >
-    <a href='recipe.php?recipe_id=<?php echo $recipes->recipe_id; ?>'><img class='responsive-img' src='img/recipe/<?php echo $recipes->image; ?>' alt="<?php echo $recipes->title; ?>" /></a> <br>
+    <a href='recipe.php?recipe_id=<?php echo $recipes->recipe_id; ?>'><img class='responsive-img2' src='img/recipe/<?php echo $recipes->image; ?>' alt="<?php echo $recipes->title; ?>" /></a> <br>
     <a href='recipe.php?recipe_id=<?php echo $recipes->recipe_id; ?>' class='indigo-text text-darken-1'><b><?php echo $recipes->title; ?></b></a>
     <br><?php // echo $recipes->description; ?>
     <br><?php echo substr($recipes->description, 0, 150); ?>...

@@ -18,7 +18,7 @@ $stmt = $db->prepare("INSERT INTO users (fname, lname, email, password, image, d
     (:fname, :lname, :email, :password, :image, :description, :address, :zip_id, :right_id) 
     ");
 
-     $uploaddir = "profileimg/";
+$uploaddir = '../profileimg/';
 $uploadfile = $uploaddir. basename($_FILES["image"]["name"]);
 
 echo '<pre>';
