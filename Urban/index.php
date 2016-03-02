@@ -71,7 +71,6 @@ include './inc/nav.php';
                     <div class='col s12 m8'>
                         <a href='#'> <img class='responsive-img' src='img/japanese.jpg' /></a> 
                         <hr><a href='recipecountry.php?origin_id=85' class='black-text'>Japanese</a><hr>
-                
                     </div>
                     <div class='col s12 m4'>
                         <a href='#'><img class='responsive-img' src='img/dutch.jpg' /></a>

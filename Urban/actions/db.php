@@ -1,6 +1,6 @@
 <?php
 
-//session_start();
+session_start();
 try {
 //    $db = new PDO("mysql:host=web22.meebox.net;dbname=mattskea_mybeers", "mattskea", "Uzb2W1x1i6");
     $db = new PDO("mysql:host=localhost;dbname=urbanchef", "root", "");

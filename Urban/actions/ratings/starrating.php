@@ -4,7 +4,6 @@
     <!--POST STAR RATING FOR DISH-->
     <!--*************************-->
     <?php
-    //Star rating system
     $stmt = $db->query("SELECT * FROM ratingtypes WHERE type_id >= 3 && type_id <= 7 ORDER BY type_id ASC ");
     while ($ratingtype = $stmt->fetchObject()) {
         ?>

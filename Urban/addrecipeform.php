@@ -2,9 +2,9 @@
 <!--MATTS CODE-->
 <!--**********-->
 <?php
-include './inc/header.php';
+include './inc/nav.php';
 ?>
-<div class="addrecipe">
+<div class="addrecipe" style="width: 100%; margin-left: 30%">
 
     <h4>Add a recipe</h4>
     <form method="post" action="actions/recipe/addRecipe.php" enctype="multipart/form-data" >
@@ -25,13 +25,10 @@ include './inc/header.php';
 
             <p><label for="image">Upload an image of the dish:</label></p>
             <p><input type="file" name="image"/></p>
-        </div>
-
-        <div class="right">
 
             <p><label for="origin_id">Select the country that the dish originates from: </label></p>
             <p>
-                <select name="origin_id">
+                <select sname="origin_id" style="display: block;">
                     <!--******************-->
                     <!--RETRIEVE COUNTRIES-->
                     <!--******************-->
@@ -46,22 +43,13 @@ include './inc/header.php';
                 </select>
             </p>
 
-            <p>How would you rate your dish?
-                <!--*************************-->
-                <!--POST STAR RATING FOR DISH-->
-                <!--*************************-->
-                <?php
-                $stmt = $db->query("SELECT * FROM ratingtypes WHERE type_id >= 3 && type_id <= 7 ORDER BY type_id ASC ");
-                while ($ratingtype = $stmt->fetchObject()) {
-                    ?>
-                    <input type="radio" name="ratings" value="<?php echo $ratingtype->type_id ?>"> <?php echo $ratingtype->rating ?>
-                    <?php
-                }
-                ?>
-
-            </p>
 
             <input type='submit' name='submit' value='Publish Recipe'>
+        </div>
+
+        <div class="right">
+
+
         </div>
     </form>
 </div>

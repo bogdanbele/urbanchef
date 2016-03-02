@@ -48,7 +48,9 @@
         $('.modal-trigger').leanModal();
 //                $('.modal-trigger').openModal();
     });
-
+//    added textare jQuery
+    $('#textarea1').val('New Text');
+    $('#textarea1').trigger('autoresize');
 </script>
 </body>
 </html>

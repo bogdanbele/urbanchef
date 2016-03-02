@@ -1,6 +1,6 @@
 <?php
 
-include ("../../inc/db.php");
+include ("../db.php");
 
 $description = $_POST['description'];
 $recipe_id = $_POST['recipe_id'];
