@@ -8,19 +8,29 @@ $stmt = $db->prepare('SELECT * FROM users WHERE user_id=:user_id');
 
 $stmt->bindValue(':user_id', $user_id);
         $stmt->execute();
-echo $email;
 
 
 $userdata = $stmt->fetchObject();
 
- echo $_SESSION["email"]; ?>
+ echo $_SESSION["email"]; ?> <br> 
 
 
-<?php echo $userdata->fname; ?>
-<?php echo $userdata->lname; ?>
-<?php echo $userdata->image; ?>
-<?php echo $userdata->description; ?>
-<?php echo $userdata->address; ?>
+
+<?php echo $userdata->fname; ?> <br> 
+
+
+<?php echo $userdata->lname; ?> <br> 
+
+
+
+<?php echo $userdata->image; ?> <br>  
+
+
+<?php echo $userdata->description; ?> <br> 
+
+
+
+<?php echo $userdata->address; ?> <br> 
 
 
 
