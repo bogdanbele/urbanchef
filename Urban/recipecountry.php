@@ -19,7 +19,7 @@ while($recipes=$pointer->fetchObject()){
             Origin: <a href='#' class='indigo-text text-darken-1'><?php echo $recipes->country; ?></a><br>
             Rating: <span class='orange-text text-darken-1'><i class='tiny material-icons'>grade</i><i class='tiny material-icons'>grade</i><i class='tiny material-icons'>grade</i><i class='tiny material-icons'>grade</i></span>
         </div>
-
+ 
 <?php
 }
 
