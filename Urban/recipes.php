@@ -31,32 +31,35 @@ $tracer = "<hr>";
     
         <?php
 $counter = 1;
-        while ($recipes = $stmt->fetchObject()) {
-            ?>
-    <div class='row'>
-            <div class='col s12 m4 forceheight' >
-                <a href='recipe.php?recipe_id=<?php echo $recipes->recipe_id; ?>'><img class='responsive-img' src='img/recipe/<?php echo $recipes->image; ?>' alt="<?php echo $recipes->title; ?>" /></a> <br>
-                <a href='recipe.php?recipe_id=<?php echo $recipes->recipe_id; ?>' class='indigo-text text-darken-1'><b><?php echo $recipes->title; ?></b></a>
-                <br><?php // echo $recipes->description; ?>
-                <br><?php echo substr($recipes->description, 0, 150); ?>...
-<?php
-                $counter = $counter + 1;
-                $modulo = $counter%3; 
-            
-                ?>
-                <hr>
-                Price: <?php echo $recipes->price; ?> DKK<br>
-                Origin: <a href='#' class='indigo-text text-darken-1'><?php echo $recipes->country; ?></a><br>
-                Rating: <span class='orange-text text-darken-1'><i class='tiny material-icons'>grade</i><i class='tiny material-icons'>grade</i><i class='tiny material-icons'>grade</i><i class='tiny material-icons'>grade</i></span>   </div>
-                <?php 
-            if ($modulo == 1 ) {
-                echo '</div>';
-            }
-            else {}
-          
-        }
-        ?>
- 
+while ($recipes = $stmt->fetchObject()) {
+    if ($modulo == 0 ) {
+         echo '<div class="row">';
+    }
+    else {}
+    ?>
+    <div class='col s12 m4 forceheight' >
+    <a href='recipe.php?recipe_id=<?php echo $recipes->recipe_id; ?>'><img class='responsive-img' src='img/recipe/<?php echo $recipes->image; ?>' alt="<?php echo $recipes->title; ?>" /></a> <br>
+    <a href='recipe.php?recipe_id=<?php echo $recipes->recipe_id; ?>' class='indigo-text text-darken-1'><b><?php echo $recipes->title; ?></b></a>
+    <br><?php // echo $recipes->description; ?>
+    <br><?php echo substr($recipes->description, 0, 150); ?>...
+    <?php
+    $counter = $counter + 1;
+    $modulo = $counter%3; 
+
+    ?>
+    <hr>
+    Price: <?php echo $recipes->price; ?> DKK<br>
+    Origin: <a href='#' class='indigo-text text-darken-1'><?php echo $recipes->country; ?></a><br>
+    Rating: <span class='orange-text text-darken-1'><i class='tiny material-icons'>grade</i><i class='tiny material-icons'>grade</i><i class='tiny material-icons'>grade</i><i class='tiny material-icons'>grade</i></span>   </div>
+    <?php 
+    if ($modulo == 1 ) {
+    echo '</div>';
+    }
+    else {}
+
+}
+?>
+    </div>   
 
 
 
