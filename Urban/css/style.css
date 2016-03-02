@@ -392,3 +392,5 @@ time, mark, audio, video {
   font: inherit;
   vertical-align: baseline;
 }
+
+.forceheight { max-height: 500px; }

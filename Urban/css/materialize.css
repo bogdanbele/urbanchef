@@ -2705,7 +2705,8 @@ i.large {
 
 img.responsive-img,
 video.responsive-video {
-  max-width: 100%;
+  max-width: 300px;
+    max-height: 300px;
   height: auto;
 }
 
@@ -6665,7 +6666,7 @@ nav ul a span.badge {
 }
 
 .container .row {
-  margin-left: -0.75rem;
+
   margin-right: -0.75rem;
 }
 
