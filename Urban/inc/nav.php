@@ -105,7 +105,8 @@ $error = "Email or Password is invalid";
 
                                 <!--<a class="waves-effect waves-light btn modal-trigger" href="#modal3">-->
                                 <!-- Modal Trigger -->
-                                <a class="waves-effect waves-light btn modal-trigger" href="./myrecipes.php">My Recipes</a>
+                            <a class="waves-effect waves-light btn modal-trigger" href="./profile.php">My Profile</a>    
+                            <a class="waves-effect waves-light btn modal-trigger" href="./myrecipes.php">My Recipes</a>
 
                                 <a class="waves-effect waves-light btn modal-trigger" href="actions/logout.php">Logout</a>
                                 <!--                                <form action="actions/logout.php" method="post"  class="col s12 nav-login">
