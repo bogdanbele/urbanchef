@@ -2712,7 +2712,7 @@ video.responsive-video {
 img.responsive-img2,
 video.responsive-video {
     max-height: 300px;
-    max-width: 300px;
+    max-width: 250px;
   height: auto;
 }
 

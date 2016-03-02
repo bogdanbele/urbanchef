@@ -393,4 +393,16 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-.forceheight { max-height: 500px; }
+.forceheight { min-height: 500px; }
+
+.topPad {
+    padding-top: 150px;
+}
+
+.hiddendiv {
+    display:none;
+}
+
+.unhiddendiv {
+    display: block !important;
+}
