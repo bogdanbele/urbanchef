@@ -31,6 +31,7 @@ $tracer = "<hr>";
     
         <?php
 $counter = 1;
+$modulo = 0;
 while ($recipes = $stmt->fetchObject()) {
     if ($modulo == 0 ) {
          echo '<div class="row">';
