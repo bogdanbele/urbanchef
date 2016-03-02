@@ -1,7 +1,7 @@
 <?php
 $db = new PDO("mysql:host=localhost;dbname=urbanchef", "root", "");
 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
-
+// put registerf into actions
 // MEMES
 
 $fname = $_POST["fname"];

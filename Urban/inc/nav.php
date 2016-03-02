@@ -129,7 +129,8 @@ $error = "Email or Password is invalid";
                         <a class="waves-effect waves-light btn modal-trigger" href="#modal2">Register</a>
                         <!-- Modal Structure -->
                         <div id="modal2" class="modal nav-login">
-                            <form class="col s12 nav-login">
+                            <!--Added form action, method and enctype--> 
+                            <form action="actions/registerf.php" method="post" enctype="multipart/form-data" class="col s12 nav-login">
                                 <div class="row">
                                     <div class="input-field col s6">
                                         <label for="email">Email</label>
