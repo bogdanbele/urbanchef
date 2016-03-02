@@ -7,7 +7,7 @@ $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 $fname = $_POST["fname"];
 $lname = $_POST["lname"];
 $email = $_POST["email"];
-$password = $_POST['password'];
+$password = sha1($_POST['password']);
 $description = $_POST["description"];
 $address = $_POST["address"];
 $zip_id = $_POST["zip_id"]; 

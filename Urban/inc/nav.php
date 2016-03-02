@@ -147,18 +147,18 @@ $error = "Email or Password is invalid";
                                 <div class="row">
                                     <div class="input-field col s6">
                                         <label for="fname">First Name: </label>
-                                        <input id="fname" type="email" name="fname" class="validate">
+                                        <input id="fname" type="text" name="fname" class="validate">
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="input-field col s6">
                                         <label for="lname">Last Name: </label>
-                                        <input id="fname" type="email" name="lname" class="validate">
+                                        <input id="fname" type="text" name="lname" class="validate">
                                     </div>
                                 </div>
                                 <div class="row">
                                 <div class="input-field col s6">
-                                <select name="right_id"><br> 
+                                <select name="right_id"  style="display:block"><br> 
     <?php
         $sql3 = "SELECT * FROM accessrights WHERE right_id < 4 AND right_id > 1";
         $table3 = $db->query($sql3);
@@ -171,10 +171,16 @@ $error = "Email or Password is invalid";
         }
     ?>
                                     </select> </div></div>
+                                  <div class="row">
+                                    <div class="input-field col s6">
+                                        <label for="address">Address: </label>
+                                        <input id="address" type="text" name="address" class="validate">
+                                    </div>
+                                </div>
                                 <div class="row">
                                 <div class="input-field col s6 browser-default">
                                     
-                                <select name="zip_id">
+                                <select name="zip_id"  style="display:block">
     <?php
         $sql2 = "SELECT * FROM zipcodes";
         $table2 = $db->query($sql2);
@@ -319,13 +325,13 @@ $error = "Email or Password is invalid";
                                 <div class="row">
                                     <div class="input-field col s6">
                                         <label for="fname">First Name: </label>
-                                        <input id="fname" type="email" name="fname" class="validate">
+                                        <input id="fname" type="text" name="fname" class="validate">
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="input-field col s6">
                                         <label for="lname">Last Name: </label>
-                                        <input id="fname" type="email" name="lname" class="validate">
+                                        <input id="fname" type="text" name="lname" class="validate">
                                     </div>
                                 </div>
 
@@ -334,6 +340,7 @@ $error = "Email or Password is invalid";
                                         <span>Profile Image</span>
                                         <input type="file" name="image">
                                     </div>
+                                  
                                     <!--                                    <div class="file-path-wrapper">
                                                                             <input class="file-path validate" type="text">
                                                                         </div>-->
