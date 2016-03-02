@@ -53,7 +53,7 @@ $error = "Email or Password is invalid";
                         <!--MATTS CODE-->
                         <!--**********-->
                         <!-- Modal Trigger -->
-                        <a class="waves-effect waves-light modal-trigger" href="#modal1">
+                        <a class="waves-effect waves-light btn modal-trigger" href="#modal1">
                             <?php
                             if (!isset($_SESSION["user_id"])) {
                                 ?>
@@ -126,11 +126,10 @@ $error = "Email or Password is invalid";
                     <!--**********-->
                     <li>                     
                         <!-- Modal Trigger -->
-                        <a class="waves-effect waves-light modal-trigger" href="#modal2">Register</a>
+                        <a class="waves-effect waves-light btn modal-trigger" href="#modal2">Register</a>
                         <!-- Modal Structure -->
                         <div id="modal2" class="modal nav-login">
-                            <!--Added form action, method and enctype--> 
-                            <form action="actions/registerf.php" method="post" enctype="multipart/form-data" class="col s12 nav-login">
+                            <form class="col s12 nav-login">
                                 <div class="row">
                                     <div class="input-field col s6">
                                         <label for="email">Email</label>
@@ -174,10 +173,17 @@ $error = "Email or Password is invalid";
                             </form>
                         </div>
                     </li>
-                    <li><a class="waves-effect waves-light" href='help.php'>Help</a></li>
+                    <li><a href='register.php'>Register</a></li>
+                    <li><a href='?page=help'>Help</a></li>
                 </ul>
 
-              
+                <!--                <ul id='nav-mobile' class='side-nav'>
+                                    <li><a id='loginButton' href='#'>Login</a></li>
+                                    <li><a href='register.php'>Register</a></li>
+                                    <li><a href='?page=help'>Help</a></li>
+                                </ul>-->
+                <a href='#' data-activates='nav-mobile' class='button-collapse'><i class='material-icons black-text'>menu</i>
+                </a>
 
             </div>
         </nav>
