@@ -156,6 +156,45 @@ $error = "Email or Password is invalid";
                                         <input id="fname" type="email" name="lname" class="validate">
                                     </div>
                                 </div>
+                                <div class="row">
+                                <div class="input-field col s6">
+                                <select name="right_id"><br> 
+    <?php
+        $sql3 = "SELECT * FROM accessrights WHERE right_id < 4 AND right_id > 1";
+        $table3 = $db->query($sql3);
+        while ($accessRights = $table3->fetchObject()) 
+        {
+            $id2 = $accessRights ->right_id;
+            ?> 
+            <option value="<?php echo $id2; ?>"><?php  echo $accessRights->type;?></option>
+            <?php 
+        }
+    ?>
+                                    </select> </div></div>
+                                <div class="row">
+                                <div class="input-field col s6 browser-default">
+                                    
+                                <select name="zip_id">
+    <?php
+        $sql2 = "SELECT * FROM zipcodes";
+        $table2 = $db->query($sql2);
+        while ($zipcode = $table2->fetchObject()) 
+        {
+            $id = $zipcode ->zip_id;
+            ?> 
+            <option value="<?php echo $id; ?>"><?php  echo $zipcode->city;?> <?php echo $zipcode->zip;?></option>
+            <?php 
+        }
+    ?>
+    </select>
+                                </div></div>
+                                <div class="row">
+                                    <div class="input-field col s6">
+                                        <label for="description">Description</label>
+                                        <textarea id="description" class="materialize-textarea" name="description" class="validate"></textarea>
+                                    </div>
+                                </div>
+                                
 
                                 <div class="row file-field input-field">
                                     <div class="btn">
