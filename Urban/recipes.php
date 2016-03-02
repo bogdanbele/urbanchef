@@ -30,7 +30,7 @@ $tracer = "<hr>";
 
     
         <?php
-$carnace = 1;
+$counter = 1;
         while ($recipes = $stmt->fetchObject()) {
             ?>
     <div class='row'>
@@ -40,8 +40,8 @@ $carnace = 1;
                 <br><?php // echo $recipes->description; ?>
                 <br><?php echo substr($recipes->description, 0, 150); ?>...
 <?php
-                $carnace = $carnace + 1;
-                $modulo = $carnace%3; 
+                $counter = $counter + 1;
+                $modulo = $counter%3; 
             
                 ?>
                 <hr>
