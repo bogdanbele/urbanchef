@@ -3,33 +3,11 @@ include './inc/nav.php';
  // jew
 $get = $_GET["origin_id"];
 
-$pointer = $db->prepare('SELECT * FROM recipes WHERE origin_id=:origin_id');
-$pointer->bindValue(":origin_id", $_GET["origin_id"]);
-$pointer->execute();
+$stmt = $db->prepare('SELECT * FROM recipes WHERE origin_id=:origin_id');
+$stmt->bindValue(":origin_id", $_GET["origin_id"]);
+$stmt->execute();
 
-
-while($recipes=$pointer->fetchObject()){
- ?>
-<div class='row'>
- <div class='col s12 m4' >
-            <a href='recipe.php?recipe_id=<?php echo $recipes->recipe_id; ?>'><img style="width: 200px;" class='responsive-img' src='img/recipe/<?php echo $recipes->image; ?>' alt="<?php echo $recipes->title; ?>" /></a>
-           <a href='recipe.php?recipe_id=<?php echo $recipes->recipe_id; ?>' class='indigo-text text-darken-1'><b> <?php echo $recipes->title; ?></b></a>
-            <br>  <?php echo $recipes->description; ?>
-            <hr>
-            Price: <?php echo $recipes->price; ?> DKK<br>
-      
-            Rating: <span class='orange-text text-darken-1'><i class='tiny material-icons'>grade</i><i class='tiny material-icons'>grade</i><i class='tiny material-icons'>grade</i><i class='tiny material-icons'>grade</i></span>
-    </div>
- 
-<?php
-}
-
-?>
-</div>
-<?php
-//2 select * from subcateg where pid whatever
-
-?>
+?> 
 
 <div id='index-banner' class='parallax-container'>
     <div class='section no-pad-bot'>
@@ -76,6 +54,44 @@ while($recipes=$pointer->fetchObject()){
         </div>
     </div>
 </div>
+<div class='container'>
+ <?php
+$counter = 1;
+$modulo = 0;
+while ($recipes = $stmt->fetchObject()) {
+    if ($modulo == 0 ) {
+         echo '<div class="row">';
+    }
+    else {}
+    ?>
+    <div class='col s12 m4 forceheight' >
+    <a href='recipe.php?recipe_id=<?php echo $recipes->recipe_id; ?>'><img class='responsive-img2' src='img/recipe/<?php echo $recipes->image; ?>' alt="<?php echo $recipes->title; ?>" /></a> <br>
+    <a href='recipe.php?recipe_id=<?php echo $recipes->recipe_id; ?>' class='indigo-text text-darken-1'><b><?php echo $recipes->title; ?></b></a>
+    <br><?php // echo $recipes->description; ?>
+    <br><?php echo substr($recipes->description, 0, 150); ?>...
+    <?php
+    $counter = $counter + 1;
+    $modulo = $counter%3; 
+
+    ?>
+    <hr>
+    Price: <?php echo $recipes->price; ?> DKK<br>
+  <br>
+    Rating: <span class='orange-text text-darken-1'><i class='tiny material-icons'>grade</i><i class='tiny material-icons'>grade</i><i class='tiny material-icons'>grade</i><i class='tiny material-icons'>grade</i></span>   </div>
+    <?php 
+    if ($modulo == 1 ) {
+    echo '</div>';
+    }
+    else {}
+
+}
+?>
+    </div> </div>
+<?php
+//2 select * from subcateg where pid whatever
+
+?>
+
 
 
 <?php
