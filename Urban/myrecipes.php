@@ -12,7 +12,13 @@ include ("actions/checked_logged_in.php");
     <div class="section">
         <!--<div class = 'row center'>-->
         <?php
-        $stmt = $db->query("SELECT * FROM recipes ORDER BY recipe_id DESC");
+        $stmt = $db->query("SELECT usersrecipe.user_id, usersrecipe.recipe_id AS usersrecipe_id, "
+                . "recipes.recipe_id, recipes.title, recipes.description, recipes.cooktime, recipes.price, "
+                . "recipes.image, recipes.origin_id FROM usersrecipe "
+                . "INNER JOIN recipes ON usersrecipe.recipe_id = recipes.recipe_id "
+                . "WHERE usersrecipe.user_id = $user_id");
+
+//        $stmt = $db->query("SELECT * FROM recipes ORDER BY recipe_id DESC");
 //        $stmt = $db->query("SELECT users.user_id, usersrecipe.user_id, usersrecipe.recipe_id, recipes.recipe_id, recipes.title, recipes.description, recipes.cooktime, recipes.price, recipes.image, recipes.origin_id FROM users"
 //                . "INNER JOIN usersrecipe ON usersrecipe.user_id = users.user_id"
 //                . "INNER JOIN recipes ON recipes.recipe_id = usersrecipe.recipe_id"
@@ -29,7 +35,7 @@ include ("actions/checked_logged_in.php");
                     </a>
                     <!--<figure>-->  
                     <a href="recipe.php">
-                        <img src="img/recipe/<?php echo $recipes->image ?>" alt="<?php echo $recipes->title ?> image">
+                        <img style="width: 400px;" src="img/recipe/<?php echo $recipes->image ?>" alt="<?php echo $recipes->title ?> image">
                     </a>
                     <div class="desc">
                         <h4>Description</h4>
@@ -137,8 +143,6 @@ include ("actions/checked_logged_in.php");
                                 ?>
                             </select>
                         </p>
-
-
                         <input type='submit' name='submit' value='Publish Recipe'>
                     </div>
             </div>
