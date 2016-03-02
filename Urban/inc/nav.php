@@ -1,16 +1,19 @@
 
 <?php
 include 'actions/db.php';
-include 'inc/functions.php';
-
+//include 'actions/checked_logged_in.php';
+if (isset($_SESSION["user_id"])) {
+$user_id = $_SESSION["user_id"];
+}
 $error = "Email or Password is invalid";
+//echo $user_id =$_SESSION["user_id"];
 ?>
 <!DOCTYPE html>
 <html lang='en'>
     <head>
         <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
         <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no'/>
-        <title><?php $title ?></title>
+        <title>Urban Chef</title>
         <meta name='description' content='Here comes the site description.' />
         <meta name='keywords' content='' />
         <meta name='author' content='Our group name' />
@@ -46,40 +49,81 @@ $error = "Email or Password is invalid";
                 </div>
                 <ul class='right hide-on-med-and-down'>
                     <li>                     
+                        <!--**********-->
+                        <!--MATTS CODE-->
+                        <!--**********-->
                         <!-- Modal Trigger -->
-                        <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Login</a>
+                        <a class="waves-effect waves-light btn modal-trigger" href="#modal1">
+                            <?php
+                            if (!isset($_SESSION["user_id"])) {
+                                ?>
+                                Login
+                                <?php
+                            } else {
+                                ?>
+                                Options
+                                <?php
+                            }
+                            ?>
+                        </a>
+
+                        <!--<a class="waves-effect waves-light btn modal-trigger" href="#modal1">Logout</a>-->
                         <!-- Modal Structure -->
                         <div id="modal1" class="modal">
-                            <!--**********-->
-                            <!--MATTS CODE-->
-                            <!--**********-->
-                            <form class="col s12 nav-login" action="actions/login.php">
-                                <div class="row">
-                                    <div class="input-field col s6">
-                                        <label for="email">Email</label>
 
-                                        <input id="email" type="email" name="email" class="validate">
+                            <?php
+                            if (!isset($_SESSION["user_id"])) {
+                                ?>
+                                <form action="actions/login.php" method="post" class="col s12 nav-login">
+                                    <div class="row">
+                                        <div class="input-field col s6">
+                                            <label for="email">Email</label>
+
+                                            <input id="email" type="email" name="email" class="validate">
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <div class="input-field col s6">
-                                        <input id="password" type="password" name="password" class="validate">
-                                        <label for="password">Password</label>
+                                    <div class="row">
+                                        <div class="input-field col s6">
+                                            <input id="password" type="password" name="password" class="validate">
+                                            <label for="password">Password</label>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <div class="input-field col s6">
-                                        <input id="submit" type="submit" class="validate" value="Login">
-                                        <!--<label for="password">Password</label>-->
+                                    <div class="row">
+                                        <form action="actions/logout.php" method="post" class="col s12 nav-login">
+
+                                            <div class="input-field col s6">
+                                                <input id="submit" type="submit" class="validate" value="Login">
+                                                <!--<label for="password">Password</label>-->
+                                            </div>
+                                        </form>
                                     </div>
-                                </div>
-                            </form>
+                                </form>
+                                <?php
+                            } else {
+                                ?>
+
+
+                                <!--<a class="waves-effect waves-light btn modal-trigger" href="#modal3">-->
+                                <!-- Modal Trigger -->
+                                <a class="waves-effect waves-light btn modal-trigger" href="./myrecipes.php">My Recipes</a>
+
+                                <a class="waves-effect waves-light btn modal-trigger" href="actions/logout.php">Logout</a>
+                                <!--                                <form action="actions/logout.php" method="post"  class="col s12 nav-login">
+                                                                    <div class="row">
+                                                                        <div class="input-field col s6">
+                                                                            <input id="submit" type="submit" class="validate" value="Logout">
+                                                                            <label for="password">Password</label>
+                                                                        </div>
+                                                                    </div>
+                                                                </form>-->
+                                <?php
+                            }
+                            ?>
                         </div>
                     </li>
                     <!--**********-->
                     <!--MATTS CODE-->
                     <!--**********-->
-                    <li><a href='register.php'>Register</a></li>
                     <li>                     
                         <!-- Modal Trigger -->
                         <a class="waves-effect waves-light btn modal-trigger" href="#modal2">Register</a>
@@ -129,6 +173,7 @@ $error = "Email or Password is invalid";
                             </form>
                         </div>
                     </li>
+                    <li><a href='register.php'>Register</a></li>
                     <li><a href='?page=help'>Help</a></li>
                 </ul>
 
