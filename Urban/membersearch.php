@@ -19,6 +19,13 @@ $stmt3->execute();
     var x = 1;
     
     
+    function prehide() {
+            var a = document.getElementById("apprentice");
+        a.className = "hiddendiv";
+           var b = document.getElementById("chef");
+        b.className = "hiddendiv";
+    }
+    
     function hide(){
         var a = document.getElementById("apprentice");
         a.className = "hiddendiv";
@@ -34,26 +41,7 @@ $stmt3->execute();
         a.className = "";
     }
     
-    
-    
-function unhide(e)
-{
-    e.preventDefault();
-    e.stopPropagation();
-    if ( x == 1 ) 
-    {
-        var d = document.getElementById("login");
-        d.className = "unhide";
-        x = 0;
-    }
-    else if ( x == 0 )
-    {
-        var d = document.getElementById("login");
-        d.className = "";
-        x =1 ;
-    }
-}
-    
+ window.onload = prehide;
 </script>
 
 
@@ -78,8 +66,9 @@ while ($apprentice  = $stmt->fetchObject()) {
     else {}
     ?>
      <div class='col s12 m4 forceheight ' >
-  <h4><?php echo $apprentice->fname; ?></h4>
+   <a href='memberprofile.php?user_id=<?php echo $apprentice->user_id; ?>'><h4><?php echo $apprentice->fname; ?></h4></a>
     <img class='responsive-img2' src='profileimg/<?php echo $apprentice->image; ?>' alt="<?php echo $apprentice->fname; ?> "/></a>
+           <br><?php echo substr($apprentice->description, 0, 150); ?>
      <?php
     $counter = $counter + 1;
     $modulo = $counter%3; 
@@ -110,8 +99,9 @@ while ($chef  = $stmt2->fetchObject()) {
     else {}
     ?>
     <div class='col s12 m4 forceheight ' >
-    <h4><?php echo $chef->fname; ?></h4>
-    <img class='responsive-img2' src='profileimg/<?php echo $chef->image; ?>' alt="<?php echo $chef->fname; ?> "/></a>
+        <a href='memberprofile.php?user_id=<?php echo $chef->user_id; ?>'><h4><?php echo $chef->fname; ?></h4></a>
+    <img class='responsive-img2' src='profileimg/<?php echo $chef->image; ?>' alt="<?php echo $chef->fname; ?> "/>
+        <br><?php echo substr($chef->description, 0, 150); ?>
      <?php
     $counter = $counter + 1;
     $modulo = $counter%3; 
@@ -142,8 +132,9 @@ while ($all  = $stmt3->fetchObject()) {
     else {}
     ?>
      <div class='col s12 m4 forceheight ' >
-  <h4><?php echo $all->fname; ?></h4>
+  <a href='memberprofile.php?user_id=<?php echo $all->user_id; ?>'><h4><?php echo $all->fname; ?></h4></a>
     <img class='responsive-img2' src='profileimg/<?php echo $all->image; ?>' alt="<?php echo $all->fname; ?> "/></a>
+           <br><?php echo substr($all->description, 0, 150); ?>
      <?php
     $counter = $counter + 1;
     $modulo = $counter%3; 
