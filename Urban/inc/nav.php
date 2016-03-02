@@ -178,7 +178,140 @@ $error = "Email or Password is invalid";
                     <li><a class="waves-effect waves-light" href='help.php'>Help</a></li>
                 </ul>
 
-              
+                
+                
+                <ul id='nav-mobile' class='side-nav'>
+                    <li>                     
+                        <!--**********-->
+                        <!--MATTS CODE-->
+                        <!--**********-->
+                        <!-- Modal Trigger -->
+                        <a class="waves-effect waves-light modal-trigger" href="#modal1">
+                            <?php
+                            if (!isset($_SESSION["user_id"])) {
+                                ?>
+                                Login
+                                <?php
+                            } else {
+                                ?>
+                                Options
+                                <?php
+                            }
+                            ?>
+                        </a>
 
+                        <!--<a class="waves-effect waves-light btn modal-trigger" href="#modal1">Logout</a>-->
+                        <!-- Modal Structure -->
+                        <div id="modal1" class="modal">
+
+                            <?php
+                            if (!isset($_SESSION["user_id"])) {
+                                ?>
+                                <form action="actions/login.php" method="post" class="col s12 nav-login">
+                                    <div class="row">
+                                        <div class="input-field col s6">
+                                            <label for="email">Email</label>
+
+                                            <input id="email" type="email" name="email" class="validate">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="input-field col s6">
+                                            <input id="password" type="password" name="password" class="validate">
+                                            <label for="password">Password</label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <form action="actions/logout.php" method="post" class="col s12 nav-login">
+
+                                            <div class="input-field col s6">
+                                                <input id="submit" type="submit" class="validate" value="Login">
+                                                <!--<label for="password">Password</label>-->
+                                            </div>
+                                        </form>
+                                    </div>
+                                </form>
+                                <?php
+                            } else {
+                                ?>
+
+
+                                <!--<a class="waves-effect waves-light btn modal-trigger" href="#modal3">-->
+                                <!-- Modal Trigger -->
+                            <a class="waves-effect waves-light btn modal-trigger" href="./profile.php">My Profile</a>    
+                            <a class="waves-effect waves-light btn modal-trigger" href="./myrecipes.php">My Recipes</a>
+
+                                <a class="waves-effect waves-light btn modal-trigger" href="actions/logout.php">Logout</a>
+                                <!--                                <form action="actions/logout.php" method="post"  class="col s12 nav-login">
+                                                                    <div class="row">
+                                                                        <div class="input-field col s6">
+                                                                            <input id="submit" type="submit" class="validate" value="Logout">
+                                                                            <label for="password">Password</label>
+                                                                        </div>
+                                                                    </div>
+                                                                </form>-->
+                                <?php
+                            }
+                            ?>
+                        </div>
+                    </li>
+                    <!--**********-->
+                    <!--MATTS CODE-->
+                    <!--**********-->
+                    <li>                     
+                        <!-- Modal Trigger -->
+                        <a class="waves-effect waves-light modal-trigger" href="#modal2">Register</a>
+                        <!-- Modal Structure -->
+                        <div id="modal2" class="modal nav-login">
+                            <!--Added form action, method and enctype--> 
+                            <form action="actions/registerf.php" method="post" enctype="multipart/form-data" class="col s12 nav-login">
+                                <div class="row">
+                                    <div class="input-field col s6">
+                                        <label for="email">Email</label>
+                                        <input id="email" type="email" name="email" class="validate">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s6">
+                                        <input id="password" type="password" name="password" class="validate">
+                                        <label for="password">Password</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s6">
+                                        <label for="fname">First Name: </label>
+                                        <input id="fname" type="email" name="fname" class="validate">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s6">
+                                        <label for="lname">Last Name: </label>
+                                        <input id="fname" type="email" name="lname" class="validate">
+                                    </div>
+                                </div>
+
+                                <div class="row file-field input-field">
+                                    <div class="btn">
+                                        <span>Profile Image</span>
+                                        <input type="file" name="image">
+                                    </div>
+                                    <!--                                    <div class="file-path-wrapper">
+                                                                            <input class="file-path validate" type="text">
+                                                                        </div>-->
+                                    <br>
+                                    <div class="row">
+                                        <div class="input-field col s6">
+                                            <input id="submit" type="submit" class="validate" value="Login">
+                                            <!--<label for="password">Password</label>-->
+                                        </div>
+                                    </div>
+                            </form>
+                        </div>
+                    </li>
+                    <li><a class="waves-effect waves-light" href='help.php'>Help</a></li>
+                </ul>
+              
+<a href='#' data-activates='nav-mobile' class='button-collapse'><i class='material-icons black-text'>menu</i>
+          </a>
             </div>
         </nav>
