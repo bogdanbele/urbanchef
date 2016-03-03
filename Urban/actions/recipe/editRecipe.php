@@ -30,21 +30,6 @@ echo "Origins_id : $origin_id <br>";
 //    echo "Possible file upload attack!\n";
 //}
 //added users recipes
-$sql = "UPDATE recipes "
-        . "SET title=:title, description=:description, cooktime=:cooktime,"
-        . " price=:price, origin_id=:origin_id"
-        . " WHERE recipe_id =:recipe_id";
-$stmt = $db->prepare($sql);
-$stmt->bindValue(":title", $title);
-$stmt->bindValue(":description", $description);
-$stmt->bindValue(":cooktime", $cooktime);
-$stmt->bindValue(":price", $price);
-$stmt->bindValue(":origin_id", $origin_id);
-$stmt->bindValue(":recipe_id", $recipe_id);
-print_r($stmt);
-//$stmt->bindValue(":image", $_FILES['image']['name']);
-$stmt->execute();
-
 /* Edit image */
 //if($_FILES['image']['error']==4){
 //    find path tooldimage
@@ -52,17 +37,50 @@ $stmt->execute();
 //    upload new
 //    update databde
 //}
-//if ($_FILES['image']['error'] == 4) {
-//    
-//} else {
-//    $uploaddir = '../../img/recipe/';
-//    $deletefile = unlink($uploaddir . basename($_FILES['image']['name']));
-//    if (move_uploaded_file($_FILES['image']['tmp_name'], $uploadfile)) {
-//        echo "File is valid, and was successfully uploaded.\n";
-//    } else {
-//        echo "Possible file upload attack!\n";
-//    }
-//}
+if ($_FILES['image']['error'] == 4) {
+
+    $sql = "UPDATE recipes "
+            . "SET title=:title, description=:description, cooktime=:cooktime,"
+            . " price=:price, origin_id=:origin_id"
+            . " WHERE recipe_id =:recipe_id";
+    $stmt = $db->prepare($sql);
+    $stmt->bindValue(":title", $title);
+    $stmt->bindValue(":description", $description);
+    $stmt->bindValue(":cooktime", $cooktime);
+    $stmt->bindValue(":price", $price);
+    $stmt->bindValue(":origin_id", $origin_id);
+    $stmt->bindValue(":recipe_id", $recipe_id);
+//$stmt->bindValue(":image", $_FILES['image']['name']);
+
+    print_r($stmt);
+    $stmt->execute();
+} else {
+    $uploaddir = '../../img/recipe/';
+    $deletefile = @unlink($uploaddir . basename($_FILES['image']['name']));
+
+
+    $uploadfile = $uploaddir . basename($_FILES['image']['name']);
+    if (move_uploaded_file($_FILES['image']['tmp_name'], $uploadfile)) {
+        echo "File is valid, and was successfully uploaded.\n";
+    } else {
+        echo "Possible file upload attack!\n";
+    }
+
+    $sql = "UPDATE recipes "
+            . "SET title=:title, description=:description, cooktime=:cooktime,"
+            . " price=:price, image=:image, origin_id=:origin_id"
+            . " WHERE recipe_id =:recipe_id";
+    $stmt = $db->prepare($sql);
+    $stmt->bindValue(":title", $title);
+    $stmt->bindValue(":description", $description);
+    $stmt->bindValue(":cooktime", $cooktime);
+    $stmt->bindValue(":price", $price);
+    $stmt->bindValue(":origin_id", $origin_id);
+    $stmt->bindValue(":recipe_id", $recipe_id);
+    $stmt->bindValue(":image", $_FILES['image']['name']);
+    print_r($stmt);
+    $stmt->execute();
+}
 echo "The recipe has been updated successfully.<br>";
 echo "Complete!";
 

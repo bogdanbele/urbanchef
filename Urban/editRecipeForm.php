@@ -38,7 +38,7 @@ $recipes = $stmt->fetchObject();
 
                 <p><label for = "image">Sorry, you can't change the recipes image</label></p>
                 <p><label for = "image">Upload an image of the dish:</label></p>
-                <!--<p><input type = "file" name = "image"/></p>-->
+                <p><input type = "file" name = "image"/></p>
                 <img style="width: 400px;" src="img/recipe/<?php echo $recipes->image ?>" alt="<?php echo $recipes->title ?> image">
 
                 <p><label for = "origin_id">Select the country that the dish originates from: </label></p>
