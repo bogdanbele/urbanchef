@@ -1,5 +1,6 @@
 <?php
-
+error_reporting(E_ALL);
+ini_set('display_errors', true);
 session_start();
 try {
 //    $db = new PDO("mysql:host=web22.meebox.net;dbname=mattskea_mybeers", "mattskea", "Uzb2W1x1i6");
