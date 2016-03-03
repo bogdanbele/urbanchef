@@ -52,7 +52,7 @@ include ("actions/checked_logged_in.php");
                     </a>
                     <div class="desc">
                         <h4>Description</h4>
-                        
+
                         <?php echo $recipes->description ?>
                     </div>
                     <div class="directions">
@@ -69,7 +69,9 @@ include ("actions/checked_logged_in.php");
                     </div>
                     <!--Edit recipe button-->
                     <a class = "waves-effect waves-light btn orange darken-1" href = "editRecipeForm.php?recipe_id=<?php echo $recipes->recipe_id; ?>">Edit Recipe</a>
-                  
+                    <!--Delete recipe button-->
+                    <a class = "waves-effect waves-light btn orange darken-1" href = "actions/recipe/deleteRecipe.php?recipe_id=<?php echo $recipes->recipe_id; ?>">Delete Recipe</a>
+
                     <div class="review-area">
                         <div class="reviews">
                             <!--****************-->
@@ -164,56 +166,6 @@ include ("actions/checked_logged_in.php");
             </div>
         </div>
     </div>
-</div>
-<!--***********-->
-<!--EDIT RECIPE-->
-<!--***********-->
-<div id = "modal6" class = "modal nav-login" style = "height: 100%">
-    <h4>Edit recipe</h4>
-    <?php 
-    $recipe_id = $_GET['recipe_id'];
-    ?>
-    <form method = "post" action = "actions/recipe/editRecipe.php" enctype = "multipart/form-data" >
-        <p><input name = "user_id" type = "hidden" id = "user_id" value = "<?php echo $user_id; ?>"></p>
-
-        <div class = "left">
-            <p><label for = "title">Recipe Title:</label></p>
-            <p> <input name = "title" type = "text" id = "title" value="<?php echo $recipes->title; ?>"/></p>
-
-            <p><label for = "description">Description:</label></p>
-            <p><textarea name = "description" rows = "40" cols = "60"><?php echo $recipes->description; ?></textarea> </p>
-
-            <p><label for = "cooktime">Cook time:</label></p>
-            <p>In minutes: <input name = "cooktime" type = "text" id = "cooktime" value="<?php echo $recipes->cooktime; ?>"/></p>
-
-            <p><label for = "price">Total cost price</label></p>
-            <p><input name = "price" type = "text" id = "price" value="<?php echo $recipes->price; ?>"/>DKK</p>
-
-            <p><label for = "image">Upload an image of the dish:</label></p>
-            <p><input type = "file" name = "image"/></p>
-            <p><input disabled name = "imagetag" type = "text" id = "price" value="<?php echo $recipes->image; ?>"/>DKK</p>
-
-            <p><label for = "origin_id">Select the country that the dish originates from: </label></p>
-            <p>
-                <select name = "origin_id" style = "display: block;">
-                    <!--****************** -->
-                    <!--RETRIEVE COUNTRIES-->
-                    <!--****************** -->
-                    <?php
-                    $stmt = $db->query("SELECT * FROM origins ORDER BY country DESC");
-//                                        $stmt->bindValue();
-//                                        $stmt->execute();
-                    while ($country = $stmt->fetchObject()) {
-                        ?>
-                        <option value="<?php echo $country > origin_id ?>"><?php echo $country->country ?></option>
-                        <?php
-                    }
-                    ?>
-                </select>
-            </p>
-            <input type='submit' name='submit' value='Publish Recipe'>
-        </div>
-</div>
 </div>
 <?php
 include './inc/footer.php';
