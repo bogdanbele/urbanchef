@@ -69,6 +69,8 @@ include ("actions/checked_logged_in.php");
                     </div>
                     <!--Edit recipe button-->
                     <a class = "waves-effect waves-light btn orange darken-1" href = "editRecipeForm.php?recipe_id=<?php echo $recipes->recipe_id; ?>">Edit Recipe</a>
+                    <!--Delete recipe button-->
+                    <a class = "waves-effect waves-light btn orange darken-1" href = "actions/recipe/deleteRecipe.php?recipe_id=<?php echo $recipes->recipe_id; ?>">Delete Recipe</a>
 
                     <div class="review-area">
                         <div class="reviews">
