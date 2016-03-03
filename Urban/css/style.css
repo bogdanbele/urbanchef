@@ -406,3 +406,8 @@ time, mark, audio, video {
 .unhiddendiv {
     display: block !important;
 }
+
+.responsive-img {
+    width: 100%;
+    height: auto;
+}
