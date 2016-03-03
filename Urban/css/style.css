@@ -7,7 +7,7 @@
  */
 body
 {
-    /*overflow-x: hidden;*/
+overflow-x: hidden;
 }
 nav ul a,
 nav .brand-logo {
