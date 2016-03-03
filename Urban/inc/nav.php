@@ -307,9 +307,13 @@ $error = "Email or Password is invalid";
                     <!--**********-->
                     <!--MATTS CODE-->
                     <!--**********-->
-                    <li>                     
-                        <!-- Modal Trigger -->
+                    <li>    
+                        <?php
+                            if (!isset($_SESSION["user_id"])) {
+                                ?>
                         <a class="waves-effect waves-light modal-trigger" href="#modal2">Register</a>
+                        <?php } ?>
+                        
                         <!-- Modal Structure -->
                         <div id="modal2" class="modal nav-login">
                             <!--Added form action, method and enctype--> 
