@@ -1,7 +1,7 @@
 <?php
 
 include ("../db.php");
-include ("../checked_logged_in.php");
+//include ("../checked_logged_in.php");
 
 $user_id = $_POST['user_id'];
 $title = $_POST['title'];

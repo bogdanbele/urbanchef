@@ -21,7 +21,7 @@ $recipes = $stmt->fetchObject();
             <?php
             ?>
 
-            <p><input name = "recipe_id" type = "text" id = "recipe_id" value = "<?php echo $recipes->recipe_id; ?>"></p>
+            <p><input name = "recipe_id" type = "hidden" id = "recipe_id" value = "<?php echo $recipes->recipe_id; ?>"></p>
 
             <div class = "left">
                 <p><label for = "title">Recipe Title:</label></p>
@@ -36,7 +36,7 @@ $recipes = $stmt->fetchObject();
                 <p><label for = "price">Total cost price</label></p>
                 <p><input name = "price" type = "text" id = "price" value="<?php echo $recipes->price; ?>"/>DKK</p>
 
-                <p><label for = "image">Sorry, you can't change the recipes image</label></p>
+                <p><label for = "image">Select a new image</label></p>
                 <p><label for = "image">Upload an image of the dish:</label></p>
                 <p><input type = "file" name = "image"/></p>
                 <img style="width: 400px;" src="img/recipe/<?php echo $recipes->image ?>" alt="<?php echo $recipes->title ?> image">
