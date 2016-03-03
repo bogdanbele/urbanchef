@@ -69,38 +69,38 @@ include './inc/nav.php';
 
                 <div class='row'>
                     <div class='col s12 m8'>
-                        <a href='#'> <img class='responsive-img' src='img/japanese.jpg' /></a> 
+                        <a href='recipecountry.php?origin_id=85'> <img class='responsive-img' src='img/japanese.jpg' /></a> 
                         <hr><a href='recipecountry.php?origin_id=85' class='black-text'>Japanese</a><hr>
                     </div>
                     <div class='col s12 m4'>
-                        <a href='#'><img class='responsive-img' src='img/dutch.jpg' /></a>
-                        <hr><a href='#' class='black-text'>Dutch</a><hr>
+                        <a href='recipecountry.php?origin_id=194'><img class='responsive-img' src='img/dutch.jpg' /></a>
+                        <hr><a href='recipecountry.php?origin_id=194' class='black-text'>Dutch</a><hr>
                     </div>
                 </div>
 
                 <div class='row'>
                     <div class='col s12 m4'>
-                        <a href='#'><img class='responsive-img' src='img/romanian.jpg' /></a>
-                        <hr><a href='#' class='black-text'>Romanian</a><hr>
+                        <a href='recipecountry.php?origin_id=141'><img class='responsive-img' src='img/romanian.jpg' /></a>
+                        <hr><a href='recipecountry.php?origin_id=141' class='black-text'>Romanian</a><hr>
                     </div>
                     <div class='col s12 m4'>
-                        <a href='#'> <img class='responsive-img' src='img/chinese.jpg' /></a>
-                        <hr><a href='#' class='black-text'>Chinese</a><hr>
+                        <a href='recipecountry.php?origin_id=36'> <img class='responsive-img' src='img/chinese.jpg' /></a>
+                        <hr><a href='recipecountry.php?origin_id=36' class='black-text'>Chinese</a><hr>
                     </div>
                     <div class='col s12 m4'>
-                        <a href='#'><img class='responsive-img' src='img/french.jpg' /></a>
-                        <hr><a href='#' class='black-text'>French</a><hr>
+                        <a href='recipecountry.php?origin_id=61'><img class='responsive-img' src='img/french.jpg' /></a>
+                        <hr><a href='recipecountry.php?origin_id=61' class='black-text'>French</a><hr>
                     </div>
                 </div>
 
                 <div class='row'>
                     <div class='col s12 m4'>
-                        <a href='#'><img class='responsive-img' src='img/american.jpg' /></a>
-                        <hr><a href='#' class='black-text'>American</a><hr>
+                        <a href='recipecountry.php?origin_id=185'><img class='responsive-img' src='img/american.jpg' /></a>
+                        <hr><a href='recipecountry.php?origin_id=185' class='black-text'>American</a><hr>
                     </div>  
                     <div class='col s12 m8'>
-                        <a href='#'> <img class='responsive-img' src='img/italian.jpg' /></a>
-                        <hr><a href='#' class='black-text'>Italian</a><hr>
+                        <a href='recipecountry.php?origin_id=83'> <img class='responsive-img' src='img/italian.jpg' /></a>
+                        <hr><a href='recipecountry.php?origin_id=83' class='black-text'>Italian</a><hr>
                     </div>
                 </div>
 
