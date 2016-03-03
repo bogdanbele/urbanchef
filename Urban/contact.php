@@ -41,8 +41,8 @@ include './inc/nav.php';
       </div>
       <div class='row'>
         <div class='input-field col s12'>
-          <textarea id='textarea1' class='materialize-textarea'></textarea>
-          <label for='textarea1'>Textarea</label>
+          <textarea id='textarea' class='materialize-textarea' ></textarea>
+          <label for='textarea1' value=''>Textarea</label>
         </div>
       </div>
     </form>
